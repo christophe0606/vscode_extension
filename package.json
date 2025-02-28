@@ -2,10 +2,15 @@
   "name": "mycode",
   "displayName": "mycode",
   "description": "Misc tools for my dev",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.97.0"
   },
+  "repository":{
+    "type": "git",
+    "url": "https://github.com/christophe0606/vscode_extension.git"
+  },
+  "license":"Apache-2.0",
   "categories": [
     "Formatters",
     "Programming Languages"
@@ -19,7 +24,16 @@
         "command": "mycode.cleanMacro",
         "title": "Clean Macro"
       }
-    ]
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "mycode.cleanMacro",
+          "when": "editorHasSelection",
+          "group": "navigation"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
